@@ -1,0 +1,51 @@
+# ==========================================
+# IntelliJ IDEA & JetBrains Editors
+# ==========================================
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+# Comment out the line below if you actually want to share run configurations via Git
+.idea/runConfigurations/
+
+# ==========================================
+# Gradle Build Tool
+# ==========================================
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# ==========================================
+# Operating System Files (Windows & macOS)
+# ==========================================
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# ==========================================
+# Node.js / Next.js Frontend
+# ==========================================
+frontend-client/node_modules/
+frontend-client/.next/
+frontend-client/out/
+frontend-client/.env*.local
+frontend-client/npm-debug.log*
+frontend-client/yarn-error.log*
+frontend-client/pnpm-debug.log*
+
+# ==========================================
+# Local Docker / Database data (Just in case)
+# ==========================================
+.postgres_data/
+.redis_data/
+.localstack_data/
+
+# ==========================================
+# Log files & Secrets
+# ==========================================
+*.log
+.env
