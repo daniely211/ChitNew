@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: chit-gateway
+  cloud:
+    gateway:
+      routes:
+        # Route logic for Week 1: Identity & User Profiles
+        - id: identity-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/v1/users/**, /api/v1/follows/**
+
+        # Route logic for Week 2: Post Ingestion & Timelines
+        - id: feed-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/v1/chits/**, /api/v1/timeline/**
+
+        # Route logic for Weeks 3 & 4: Transactions & Access Control
+        - id: payment-service
+          uri: http://localhost:8083
+          predicates:
+            - Path=/api/v1/wallets/**, /api/v1/purchases/**
+
+      # Prevents CORS headaches when connecting your Next.js app later
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:3000"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+            allowedHeaders: "*"
